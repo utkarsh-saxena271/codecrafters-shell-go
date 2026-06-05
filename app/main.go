@@ -17,5 +17,5 @@ func main() {
 		fmt.Fprintln(os.Stderr, "Error reading input:", err)
 		os.Exit(1)
 	}
-	fmt.Printf("%s : Command not found", command[:len(command)-1])
+	fmt.Printf("%s: Command not found", command[:len(command)-1])
 }

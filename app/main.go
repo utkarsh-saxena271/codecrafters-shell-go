@@ -19,9 +19,6 @@ func main() {
 			os.Exit(1)
 		}
 		command = command[:len(command)-1]
-		if command == "exit" {
-			return
-		}
 		i := 0
 		for ; i < len(command); i++ {
 			if command[i] == ' ' {
@@ -44,8 +41,12 @@ func main() {
 		}
 		if command == "type" && (str == "echo" || str == "type" || str =="exit"){
 			fmt.Printf("%s is a shell builtin\n", str)
+		}else {
+			fmt.Println("invalid_command: not found")
 		}
-
+		if command == "exit" {
+			return
+		}
 		if command != "exit" && command != "echo" && command != "type" {
 			fmt.Printf("%s: command not found\n", command)
 		}

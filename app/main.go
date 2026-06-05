@@ -19,23 +19,31 @@ func main() {
 			os.Exit(1)
 		}
 		command = command[:len(command)-1]
-		if command == "exit"{
+		if command == "exit" {
 			return
 		}
 		i := 0
-		for ; i<len(command);i++{
+		for ; i < len(command); i++ {
 			if command[i] == ' ' {
-				break;
+				break
 			}
+		}
+		if i == len(command) {
+			if command == "echo" {
+				fmt.Println()
+			} else if command != "exit" {
+				fmt.Printf("%s: command not found\n", command)
+			}
+			continue
 		}
 		str := command[i+1:]
 		command = command[:i]
-		
-		if command == "echo"{
+
+		if command == "echo" {
 			fmt.Println(str)
 		}
 
-		if command != "exit" && command != "echo"{
+		if command != "exit" && command != "echo" {
 			fmt.Printf("%s: command not found\n", command)
 		}
 	}

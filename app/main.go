@@ -28,7 +28,7 @@ func main() {
 				break;
 			}
 		}
-		str := command[i:]
+		str := command[i+1:]
 		command = command[:i]
 		
 		if command == "echo"{

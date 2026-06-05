@@ -19,6 +19,9 @@ func main() {
 			os.Exit(1)
 		}
 		command = command[:len(command)-1]
+		if command == "exit" {
+			return
+		}
 		i := 0
 		for ; i < len(command); i++ {
 			if command[i] == ' ' {

@@ -18,6 +18,9 @@ func main() {
 			fmt.Fprintln(os.Stderr, "Error reading input:", err)
 			os.Exit(1)
 		}
+		if command == "exit"{
+			return;
+		}
 		fmt.Printf("%s: command not found\n", command[:len(command)-1])
 	}
 }

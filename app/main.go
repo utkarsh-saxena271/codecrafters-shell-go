@@ -22,6 +22,21 @@ func main() {
 		if command == "exit"{
 			return
 		}
-		fmt.Printf("%s: command not found\n", command)
+		i := 0
+		for ; i<len(command);i++{
+			if command[i] == ' ' {
+				break;
+			}
+		}
+		str := command[i:]
+		command = command[:i]
+		
+		if command == "echo"{
+			fmt.Println(str)
+		}
+
+		if command != "exit" && command != "echo"{
+			fmt.Printf("%s: command not found\n", command)
+		}
 	}
 }

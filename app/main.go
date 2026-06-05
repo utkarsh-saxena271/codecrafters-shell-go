@@ -39,10 +39,12 @@ func main() {
 		if command == "echo" {
 			fmt.Println(str)
 		}
-		if command == "type" && (str == "echo" || str == "type" || str =="exit"){
-			fmt.Printf("%s is a shell builtin\n", str)
-		}else {
-			fmt.Printf("%s: not found\n", str)
+		if command == "type" {
+			if str == "echo" || str == "type" || str == "exit" {
+				fmt.Printf("%s is a shell builtin\n", str)
+			} else {
+				fmt.Printf("%s: not found\n", str)
+			}
 		}
 		if command == "exit" {
 			return
